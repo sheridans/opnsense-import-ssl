@@ -65,7 +65,7 @@ if (! file_exists($argv[2])) {
 }
 
 $key = trim(file_get_contents($argv[2]));
-if (! preg_match('/^-----BEGIN PRIVATE KEY-----(.*)-----END PRIVATE KEY-----$/s', $key)) {
+if (! preg_match('/^-----BEGIN (EC )PRIVATE KEY-----(.*)-----END (EC )PRIVATE KEY-----$/s', $key)) {
     echo "The private key does not appear to be valid\r\n";
     die(1);
 }
